@@ -72,7 +72,7 @@ def main():
             # Find the selected student and update their assignments
             for student in students:
                 if student.username == selected_student:
-                    student.assignments = [{"topic": st.session_state['topic'], "responses":responses}]
+                    student.assignments.append({"topic": st.session_state['topic'], "responses":responses})
                     break
 
             # Save the updated users to the db.json file

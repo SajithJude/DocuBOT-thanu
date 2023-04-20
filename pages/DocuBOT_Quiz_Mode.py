@@ -70,6 +70,8 @@ if "username" in st.session_state:
         for x in assignments:
             st.write(st.session_state["selected_topic"])
             if st.session_state["selected_topic"] == x['topic']:
+                if 'pos' not in st.session_state or st.session_state['pos'] is None:
+                    st.session_state['pos'] = assignments.index(x)
                 questions = x['responses']
                 if st.session_state['current_question'] < len(questions):
                     current_question = questions[st.session_state['current_question']]
@@ -100,12 +102,18 @@ if "username" in st.session_state:
                         }
                         responses.append(response)
 
-                    user.assignments = responses
+                    user.assignments[st.session_state['pos']] = {"topic": st.session_state['selected_topic'], "responses":responses}
                     save_users(users)
 
-                    message("Thank you for answering all the questions. Your responses have been saved.", is_user=False)
+                    message("Thank you for answering all the questions. Your responses have been saved.", is_user=False, key=str(st.session_state['selected_topic']))
                     st.sidebar.write("Thank you for answering all the questions. Your responses have been saved.")
-
+                    st.session_state['current_question'] = 0
+                    st.session_state['selected_topic'] = ""
+                    st.session_state['pos'] = None
+                    st.session_state['past'] = []
+                    st.session_state['generated'] = []
+                   
+                    #st.stop()
                     st.sidebar.download_button(
                         label="Download Responses",
                         data=json.dumps(responses),
