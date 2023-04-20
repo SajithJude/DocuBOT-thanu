@@ -53,11 +53,7 @@ def main():
     # Check if the user is logged in and is an instructor
     if "username" in st.session_state and st.session_state["user_type"] == "instructor":
         instructor = [u for u in users if u.username == st.session_state['username']][0]
-        
-        # Upload the JSON file with responses
-        # uploaded_file = st.file_uploader("Upload the responses JSON file here")
-        
-        # if uploaded_file is not None:
+
         try:
             responses = st.session_state.json_output
         except AttributeError:
@@ -80,6 +76,7 @@ def main():
             st.success(f"Responses assigned to {selected_student}.")
     else:
         st.warning("Please log in as an instructor to assign responses.")
+
 
 if __name__ == "__main__":
     
