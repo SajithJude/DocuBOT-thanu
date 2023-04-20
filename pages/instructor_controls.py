@@ -79,7 +79,7 @@ def view_responses(users):
 
 
     if grade:
-        st.write(student_ans,real_ans)
+        # st.write(student_ans,real_ans)
         prompt = f"xompare the following list of answers given by a student with the actuall answer and generate a percentage on how much they match and also generate feed back for the student on the areas he needs to focus on learning\n Students Answers : {str(student_ans)}\n Actual Answers :  {str(real_ans)}"
         response = openai.Completion.create(
             model="text-davinci-003",
