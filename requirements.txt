@@ -1,0 +1,10 @@
+streamlit
+openai
+llama-index
+langchain
+PyPDF2
+streamlit-chat
+firebase_admin
+pycryptodome
+pyrebase
+st-pages

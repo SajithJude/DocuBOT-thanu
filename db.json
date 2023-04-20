@@ -1,0 +1,46 @@
+[
+  {
+    "username": "instructor1",
+    "password": "password1",
+    "user_type": "instructor",
+    "instructor": null,
+    "assignments": []
+  },
+  {
+    "username": "instructor2",
+    "password": "password2",
+    "user_type": "instructor",
+    "instructor": null,
+    "assignments": []
+  },
+  {
+    "username": "learner1",
+    "password": "password3",
+    "user_type": "learner",
+    "instructor": "instructor1",
+    "assignments": [
+      {
+        "topic": "AI",
+        "responses": [
+          {
+            "question": "What is Artificial Intelligence (AI)?",
+            "answer": "Artificial Intelligence (AI) is a branch of computer science that focuses on creating intelligent machines that can think and act like humans. It involves the use of algorithms and software to create systems that can perceive their environment, learn from experience, and take decisions with minimal human intervention.",
+            "Question": "What is Artificial Intelligence (AI)?"
+          },
+          {
+            "question": "What are the applications of AI?",
+            "answer": "AI has a wide range of applications in many different fields, such as healthcare, finance, robotics, manufacturing, transportation, agriculture and many more. AI can be used to automate processes, improve decision making and provide insights into complex systems. It can also be used for image recognition, natural language processing, machine learning and more.",
+            "Question": "What are the applications of AI?"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "username": "learner2",
+    "password": "password4",
+    "user_type": "learner",
+    "instructor": "instructor2",
+    "assignments": []
+  }
+]
