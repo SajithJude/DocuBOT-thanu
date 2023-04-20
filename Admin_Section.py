@@ -136,7 +136,8 @@ if __name__ == "__main__":
             show_pages([
             Page("Admin_Section.py", "Home", "🏠"),
             Page("pages/Admin_Controls.py",  "Admin_Controls"),
-            Page("pages/Instructor_Quiz_Config.py",  "Question_Generation")
+            Page("pages/Instructor_Quiz_Config.py",  "Question_Generation"),
+            Page("pages/instructor_controls.py",  "Instructor controls")
             ])
 
        
