@@ -53,21 +53,21 @@ def view_responses(users):
 
     topics = list(set([a["topic"] for a in selected_student_obj.assignments]))
     selected_topic = st.selectbox("Select a topic to view responses", topics)
-
-    if st.button("View Responses"):
+    col1, col2 = st.columns(2)
+    if col1.button("View Responses"):
         for assignment in selected_student_obj.assignments:
             if assignment["topic"] == selected_topic:
                 for i, response in enumerate(assignment["responses"]):
-                    st.write(f"Question {i+1}: {response['question']}")
-                    st.write(f"Student's Answer: {response['answer']}")
+                    col1.write(f"Question {i+1}: {response['question']}")
+                    col1.write(f"Student's Answer: {response['answer']}")
                 break
 
-    if st.button("Compare Responses"):
+    if col2.button("Compare Responses"):
         for assignment in instructor.assignments:
             if assignment["topic"] == selected_topic:
                 for i, response in enumerate(assignment["responses"]):
-                    st.write(f"Question {i+1}: {response['question']}")
-                    st.write(f"Instructor's Answer: {response['answer']}")
+                    col2.write(f"Question {i+1}: {response['question']}")
+                    col2.write(f"Instructor's Answer: {response['answer']}")
                 break
 
 
