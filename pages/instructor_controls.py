@@ -59,9 +59,16 @@ def view_responses(users):
             if assignment["topic"] == selected_topic:
                 for i, response in enumerate(assignment["responses"]):
                     st.write(f"Question {i+1}: {response['question']}")
-                    st.write(f"Answer: {response['answer']}")
+                    st.write(f"Student's Answer: {response['answer']}")
                 break
 
+    if st.button("Compare Responses"):
+        for assignment in instructor.assignments:
+            if assignment["topic"] == selected_topic:
+                for i, response in enumerate(assignment["responses"]):
+                    st.write(f"Question {i+1}: {response['question']}")
+                    st.write(f"Instructor's Answer: {response['answer']}")
+                break
 
 
 def main():
